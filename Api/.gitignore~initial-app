@@ -1,0 +1,4 @@
+.ftpconfig
+node_modules/
+dist/
+src/logging/logs/

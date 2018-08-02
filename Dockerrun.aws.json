@@ -1,0 +1,70 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "api",
+      "image":
+        "604625100461.dkr.ecr.eu-west-1.amazonaws.com/competition-handler-api:latest",
+      "environment": [
+        {
+          "name": "NODE_ENV",
+          "value": "production"
+        }
+      ],
+      "essential": true,
+      "memoryReservation": 256,
+      "mountPoints": [
+        {
+          "containerPath": "/usr/src/app",
+          "sourceVolume": "api"
+        }
+      ],
+      "portMappings": [
+        {
+          "hostPort": 3000,
+          "containerPort": 3000
+        }
+      ]
+    },
+    {
+      "name": "nginx-proxy",
+      "image": "nginx",
+      "essential": true,
+      "memory": 128,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["api"],
+      "mountPoints": [
+        {
+          "sourceVolume": "api",
+          "containerPath": "/var/app/current/api",
+          "readOnly": true
+        },
+        {
+          "sourceVolume": "nginx-proxy-conf",
+          "containerPath": "/etc/nginx/conf.d",
+          "readOnly": true
+        }
+      ]
+    }
+  ],
+  "family": "",
+  "volumes": [
+    {
+      "name": "api",
+      "host": {
+        "sourcePath": "/var/app/current/api"
+      }
+    },
+    {
+      "name": "nginx-proxy-conf",
+      "host": {
+        "sourcePath": "/var/app/current/proxy/conf.d"
+      }
+    }
+  ]
+}

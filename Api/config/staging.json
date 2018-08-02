@@ -1,0 +1,10 @@
+{
+  "sequelize": {
+    "db": {
+      "username": "yousuf",
+      "password": "password",
+      "database": "comp_handler",
+      "host": "127.0.0.1"
+    }
+  }
+}

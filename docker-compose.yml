@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+
+  api:
+    container_name: api
+    build: ./Api/
+    ports:
+      - '3000:3000' # expose ports - HOST:CONTAINER
+    environment:
+      - NODE_ENV=production
+    networks:
+      - backend
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "10"
+
+  dashboard:
+    container_name: dashboard
+    build: ./AdminDashboard/
+    ports:
+      - '3005:3005' # expose ports - HOST:CONTAINER
+    environment:
+      - NODE_ENV=production
+    depends_on:
+        - api
+    links:
+      - api
+    networks:
+     - backend
+    logging:
+      driver: json-file
+      options:
+        max-size: "5m"
+        max-file: "10"
+
+networks:
+  backend:
+    driver: bridge

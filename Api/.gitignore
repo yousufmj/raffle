@@ -1,0 +1,8 @@
+.ftpconfig
+node_modules/
+dist/
+src/logging/logs/
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml

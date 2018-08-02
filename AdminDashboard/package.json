@@ -1,0 +1,37 @@
+{
+  "name": "dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^1.0.0",
+    "@material-ui/icons": "^1.0.0",
+    "axios": "^0.18.0",
+    "csv": "^3.1.0",
+    "csvtojson": "^2.0.4",
+    "material-ui": "^0.20.1",
+    "papaparse": "^4.5.0",
+    "ra-data-json-server": "^2.0.0-RC4",
+    "ra-input-rich-text": "^2.0.0",
+    "react": "^16.3.2",
+    "react-admin": "^2.0.0-RC4",
+    "react-csv": "^1.0.14",
+    "react-dom": "^16.3.2",
+    "react-dropzone": "^4.2.11",
+    "react-scripts": "1.1.4",
+    "recompose": "^0.27.1"
+  },
+  "scripts": {
+    "dev": "REACT_APP_STAGE=development npm run start-app",
+    "start": "REACT_APP_STAGE=production npm run start-app",
+    "start-app": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-config-google": "^0.9.1",
+    "eslint-plugin-react": "^7.8.2",
+    "lerna": "^2.11.0"
+  }
+}

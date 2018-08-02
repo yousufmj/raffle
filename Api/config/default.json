@@ -1,0 +1,29 @@
+{
+  "sequelize": {
+    "db": {
+      "username": "yousuf",
+      "password": "password",
+      "database": "comp_handler",
+      "host": "127.0.0.1",
+      "dialect": "mysql",
+      "dialectOptions": {}
+    },
+    "myriad": {
+      "username": "cb_myriad",
+      "password": "vC24NEb6",
+      "database": "myriad",
+      "host": "185.55.79.138",
+      "dialect": "mysql"
+    },
+    "express": {
+      "username": "exp_root",
+      "password": "8cc8EQb7f93cdADSmVHrp",
+      "database": "expression",
+      "host": "185.55.79.138",
+      "dialect": "mysql"
+    }
+  },
+  "server": {
+    "baseUrl": "127.0.0.1"
+  }
+}

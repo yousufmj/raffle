@@ -1,0 +1,15 @@
+{
+  "sequelize": {
+    "db": {
+      "username": "yousuf",
+      "password": "password",
+      "database": "comp_handler",
+      "host": "127.0.0.1"
+    }
+  },
+  "auth": {
+    "jwt": {
+      "secret": "54F645EAE4C98E57E6F4C4FB49441"
+    }
+  }
+}
